@@ -1,7 +1,7 @@
 package sungjun;
 
 import java.util.*;
-// 2021.11.12 실패
+// 2021.11.12 3번째 실패
 public class Calculator3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
