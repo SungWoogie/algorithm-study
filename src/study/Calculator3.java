@@ -1,4 +1,4 @@
-package sungjun;
+package study;
 
 import java.util.*;
 // 2021.11.12 3번째 실패
