@@ -1,5 +1,5 @@
 package baekjoon;
-
+//2021.11.16
 import java.util.Scanner;
 
 public class Q5554 {
