@@ -1,5 +1,8 @@
 package study;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ListSungWook {
@@ -20,6 +23,20 @@ public class ListSungWook {
         this.array = newArray; // 배열을 재지정
         print();
 
+    }
+
+    public void indexAdd(int index, int num) {
+        int[] newArray = new int[array.length + 1]; // 인덱스 1칸 추가 하는 배열
+        int count = 0;
+        for (int i = 0; i < newArray.length; i++) {
+            if (index == i) {
+                newArray[index] = num;
+                count++;
+            } else {
+                newArray[i] = this.array[i - count];
+            }
+        }
+        this.array = newArray;
     }
 
     public void remove(int index) { // 파라미터로 받은 index 에 있는 값을 없앤다. 크기가 1개 줄어야함. //인덱스 입력시 인덱스 해당값 삭제기능
@@ -58,27 +75,34 @@ class Main {
 
     public static void main(String[] args) {
         ListSungWook sungWook = new ListSungWook();
-
         Scanner scanner = new Scanner(System.in);
+        int[] arr = new int[10];
+
         while (true) {
-            sungWook.add(scanner.nextInt()); // scanner.nextInt == 0 1 2 3 4 5 6 7 8 9 10 20 30
-            if (sungWook.array.length == 5) {
-                sungWook.print();
-                break;
-            }
+            sungWook.indexAdd(scanner.nextInt(),scanner.nextInt());
+            sungWook.print();
         }
+
+//        while (true) {
+//            sungWook.add(scanner.nextInt()); // scanner.nextInt == 0 1 2 3 4 5 6 7 8 9 10 20 30
+//            if (sungWook.array.length == 5) {
+//                sungWook.print();
+//                break;
+//            }
+
+//        }
 //        while (true) {
 //            sungWook.remove(scanner.nextInt());
 //            if (sungWook.array.length == 1) {
 //                break;
 //            }
 //        }
-        while (true) {
-            if (sungWook.contains(scanner.nextInt())) {
-                System.out.println("true");
-            } else {
-                System.out.println("false");
-            }
-        }
+//        while (true) {
+//            if (sungWook.contains(scanner.nextInt())) {
+//                System.out.println("true");
+//            } else {
+//                System.out.println("false");
+//            }
+//        }
     }
 }
