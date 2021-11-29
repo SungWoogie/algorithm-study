@@ -12,7 +12,7 @@ public class SungJun_2 {
         int[] newArray = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
-            newArray[i] = arr[i] * -1;
+            newArray[i] = arr[i] * (-1);
         }
         for (int a : newArray) {
             System.out.println(a);
