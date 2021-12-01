@@ -1,6 +1,6 @@
 package test;
 
-public class SungJun_2_211130 {
+public class SungJun_2_211201 {
     public static void main(String[] args) {
         int index = 2;
         int num = 1000;
