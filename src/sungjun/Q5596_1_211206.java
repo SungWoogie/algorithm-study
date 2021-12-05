@@ -1,8 +1,8 @@
-package baekjoon;
+package sungjun;
 
 import java.util.Scanner;
 
-public class Q5596 {
+public class Q5596_1_211206 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
