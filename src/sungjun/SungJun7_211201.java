@@ -1,4 +1,4 @@
-package test;
+package sungjun;
 
 import java.util.Scanner;
 

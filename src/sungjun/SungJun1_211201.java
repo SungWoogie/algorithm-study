@@ -1,8 +1,8 @@
-package test;
+package sungjun;
 
 import java.util.Arrays;
 
-public class SungJun3_211201 {
+public class SungJun1_211201 {
     public static void main(String[] args) {
         int num = 1000;
         int[] arr = new int[]{50, 60, 70, 10, 20, 30, 50, 60, 70, 80, 20};

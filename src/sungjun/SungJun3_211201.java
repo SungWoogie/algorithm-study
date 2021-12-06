@@ -1,10 +1,9 @@
-package test;
+package sungjun;
 
-public class SungJun_2 {
+public class SungJun3_211201 {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
         int[] num = number(arr);
-
 
     }
 

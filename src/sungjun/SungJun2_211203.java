@@ -1,9 +1,9 @@
-package test;
+package sungjun;
 
 public class SungJun2_211203 {
     public static void main(String[] args) {
-        int index = 3;
-        int num = 100;
+        int index = 4;
+        int num = 90;
         int[] arr = new int[]{20, 30, 40, 50, 60};
         int[] returnArr = indexAdd(arr, index, num);
 

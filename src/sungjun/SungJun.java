@@ -1,4 +1,4 @@
-package test;
+package sungjun;
 
 public class SungJun {
     public static void main(String[] args) {
