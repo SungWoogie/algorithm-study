@@ -1,4 +1,4 @@
-package test;
+package study;
 
 public class test_211202 {
     public static void main(String[] args) {
