@@ -8,9 +8,14 @@ import java.util.Scanner;
 public class ListSungWook {
 
     public int[] array;
+    public String name;
 
     public ListSungWook() {
         this.array = new int[0];
+    }
+
+    public ListSungWook(String str) {
+        this.name = str;
     }
 
     public void add(int num) { // 크기1개 늘리고 마지막 인덱스에 값을 넣어준다.
@@ -75,13 +80,25 @@ class Main {
 
     public static void main(String[] args) {
         ListSungWook sungWook = new ListSungWook();
+        ListSungWook sungWook1 = new ListSungWook();
+        ListSungWook sungWook2 = new ListSungWook("성준");
+        System.out.println(sungWook.name);
+
         Scanner scanner = new Scanner(System.in);
         int[] arr = new int[10];
 
-        while (true) {
-            sungWook.indexAdd(scanner.nextInt(),scanner.nextInt());
+        int i = 0;
+        while (i < 5) {
+            sungWook.indexAdd(scanner.nextInt(), scanner.nextInt());
             sungWook.print();
+            i++;
         }
+        if (sungWook.contains(scanner.nextInt())) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
 
 //        while (true) {
 //            sungWook.add(scanner.nextInt()); // scanner.nextInt == 0 1 2 3 4 5 6 7 8 9 10 20 30
@@ -97,12 +114,6 @@ class Main {
 //                break;
 //            }
 //        }
-//        while (true) {
-//            if (sungWook.contains(scanner.nextInt())) {
-//                System.out.println("true");
-//            } else {
-//                System.out.println("false");
-//            }
-//        }
-    }
+
 }
+
