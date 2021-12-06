@@ -16,11 +16,12 @@ public class AddIndex_211107 {
         int count = 0;
 
         for (int i = 0; i < newArr.length; i++) {
-            if (arr[i] != index) {
-                newArr[i] = arr[i];
+            if (index == i) {
+                newArr[index] = num;
+            } else {
+                newArr[i] = arr[count];
                 count++;
             }
-            newArr[count] = arr[num];
         }
         return newArr;
     }
