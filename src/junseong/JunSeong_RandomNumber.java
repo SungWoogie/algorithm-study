@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 public class JunSeong_RandomNumber {
     public static void main(String[] args) { //무조건 10개만 가능 // 수 제한 10부터 19까지만 가능

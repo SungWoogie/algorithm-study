@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 import java.util.Scanner;
 

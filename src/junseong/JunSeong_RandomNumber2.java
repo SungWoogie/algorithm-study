@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 public class JunSeong_RandomNumber2 {
     public static void main(String[] args) {

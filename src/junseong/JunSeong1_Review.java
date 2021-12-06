@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 // 2021.11.23 반복문 배열 정방향으로 숫자 찍어내기
 public class JunSeong1_Review {

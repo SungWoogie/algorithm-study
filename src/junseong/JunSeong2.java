@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 //2021.11.23 배열 거꾸로 출력
 public class JunSeong2 {

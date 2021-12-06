@@ -1,4 +1,4 @@
-package test;
+package junseong;
 
 //2021.11.23 역방향
 public class JunSeong2_Review {
