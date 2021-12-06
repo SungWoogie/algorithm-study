@@ -5,13 +5,13 @@ public class WhileExam {
         int i = 0;
         while (i < 10) {
             i++;
-            System.out.println(i);
         }
+        System.out.println(i);
 
         int j = 0;
         while (j <= 10) {
-            System.out.println(j);
             j++;
         }
+        System.out.println(j);
     }
 }
