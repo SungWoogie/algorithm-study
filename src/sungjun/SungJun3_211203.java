@@ -37,21 +37,21 @@ public class SungJun3_211203 {
     }
 
     public static int[] valueRemove(int[] arr, int num) {
+        int[] newArr = new int[arr.length]; //새로운 배열 만들기 크기는 파라미터로 받은 배열과 동일
         int count = 0;
-        int[] newArr = new int[arr.length - count];
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != num) {
-                newArr[count] = arr[i];
+                newArr[count] = arr[i];  //지울 값과 다른 값만 새로운 배열에 넣어줌
                 count++;
             }
         }
-        count = 0;
-        for (int i = 0; i < newArr.length; i++) {
-            if (newArr[i] == num) {
-                count++;
-            }
+
+        int[] returnArr = new int[count];
+
+        for (int i = 0; i < returnArr.length; i++) {
+            returnArr[i] = newArr[i];
         }
-        return newArr;
+        return returnArr;
     }
 }
