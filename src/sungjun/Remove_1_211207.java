@@ -1,9 +1,9 @@
 package sungjun;
 
-public class Remove_211207 { // indexRemove 중복값 출력
+public class Remove_1_211207 { // indexRemove 인덱스 중복 빼고 출력 (잘못 이해하고 로직 짬 다시)
     public static void main(String[] args) {
-        int[] arr = new int[]{10, 20, 30, 40, 40};
-        int index = 3;
+        int[] arr = new int[]{10, 10, 30, 40, 50};
+        int index = 0;
         int[] result = solution(arr, index);
 
         for (int a : result) {
