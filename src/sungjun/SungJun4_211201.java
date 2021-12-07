@@ -2,7 +2,7 @@ package sungjun;
 
 public class SungJun4_211201 {
     public static void main(String[] args) {
-        int index = 0;
+        int index = 1;
         int[] arr = new int[]{10, 20, 30, 40, 50, 20};
         int[] remove = remove(arr, index);
 
