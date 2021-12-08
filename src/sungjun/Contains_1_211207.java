@@ -3,7 +3,7 @@ package sungjun;
 public class Contains_1_211207 {
     public static void main(String[] args) {
         int[] arr = new int[]{10, 20, 30, 40};
-        int num = 40;
+        int num = 1;
         boolean result = solution(arr, num);
         if (result) {
             System.out.println("true");
