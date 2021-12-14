@@ -1,7 +1,7 @@
 package programmers;
 
 import java.util.Arrays;
-
+// 행렬의 덧셈
 public class Challenger_3 {
     public static void main(String[] args) {
         int[][] arr1 = {{1, 2}, {2, 3}};
