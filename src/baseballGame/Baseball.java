@@ -53,13 +53,13 @@ public class Baseball {
                 if (strike == 3) {
                     System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
                     System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-                    if (scanner.nextInt() != 1) {
-                        replay = false;
-                    } else {
-                        TempComputerNumber.clear();
+                    if (scanner.nextInt() != 1) { // 게임을 다시 시작할지 끝낼지 여부 확인
+                        replay = false; // 1이 아니라면 위에 만들어준 replay = false 로 게임 끝
+                    } else { // 1이라면 게임을 다시시작
+                        TempComputerNumber.clear(); // 다시 시작하기전에 기존에 Set, List 에 있는 값 초기화
                         computerNumber.clear();
                     }
-                    Continue = false;
+                    Continue = false; // 1이라면 게임 다시 시작을 위하여 Continue = false 로 만들어 닫음, 와일 반복해서 진행하기 때문
                 }
             }
         }
