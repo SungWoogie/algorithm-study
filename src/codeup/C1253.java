@@ -20,7 +20,7 @@ public class C1253 {
                 b++;
             }
         } else {
-            System.out.println(a);
+            System.out.println(b);
         }
     }
 }
