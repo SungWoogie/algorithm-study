@@ -7,16 +7,15 @@ public class C1093 {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
-        int[] arr = new int[n];
+        int[] arr = new int[23];
+        int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = scanner.nextInt();
-            int count = 0;
-
-            if (arr[i] == i) {
-                count++;
-                System.out.println(i);
-            }
+        for (int i = 1; i <= n; i++) {
+            count = scanner.nextInt();
+            arr[count - 1]++;
+        }
+        for (int a : arr) {
+            System.out.print(a + " ");
         }
     }
 }
