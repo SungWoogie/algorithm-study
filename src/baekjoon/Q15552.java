@@ -19,6 +19,7 @@ public class Q15552 {
 
             bw.write(sum + "\n");
         }
+        bw.flush();
         bw.close();
     }
 }
