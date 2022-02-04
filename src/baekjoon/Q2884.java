@@ -8,19 +8,18 @@ public class Q2884 {
 
         int hour = scanner.nextInt();
         int minute = scanner.nextInt();
-        int time = 45;
         int minus;
 
-        if (hour == 0 && minute < time) { // 30 < 45
+        if (hour == 0 && minute < 45) { // 30 < 45
             hour = 23;
-            minus = 60 - time + minute;
+            minus = (60 - 45) + minute;
             System.out.println(hour + " " + minus);
-        } else if (minute < time) {
+        } else if (minute < 45) {
             hour--;
-            minus = 60 - time + minute;
+            minus = (60 - 45) + minute;
             System.out.println(hour + " " + minus);
         } else {
-            minus = minute - time;
+            minus = minute - 45;
             System.out.println(hour + " " + minus);
         }
     }
