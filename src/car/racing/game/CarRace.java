@@ -28,16 +28,19 @@ public class CarRace {
                 if (stick >= 4) {
                     arr[j]++;
                 }
-                System.out.println(carList.get(j) + " " + ":" + " " + arr[j]);
+                System.out.print(carList.get(j) + " " + ":" + " ");
+                for (int k = 0; k < arr[j]; k++) {
+                    System.out.print("-");
+                }
+                System.out.println();
             }
             System.out.println();
         }
-    }
 //        for (int i = 0; i < arr.length; i++) {
 //            if (arr[0] >= arr[1]) {
 //                System.out.println("");
 //            }
 //
 //        }
+    }
 }
-
