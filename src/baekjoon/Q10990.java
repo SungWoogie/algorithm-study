@@ -6,10 +6,10 @@ public class Q10990 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int n = scanner.nextInt();
+        int t = scanner.nextInt();
 
-        for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < n - i; j++) {
+        for (int i = 1; i <= t; i++) {
+            for (int j = 0; j < t - i; j++) {
                 System.out.print(" ");
             }
             System.out.print("*");
