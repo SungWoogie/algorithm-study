@@ -1,7 +1,7 @@
 package baekjoon;
 
 import java.util.Scanner;
-
+// 하다가 정지
 public class Q10798 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
