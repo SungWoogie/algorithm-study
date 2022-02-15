@@ -17,13 +17,7 @@ public class Q10798 {
             String str = scanner.next();
 
             for (int j = 0; j < str.length(); j++) {
-                if (str.charAt(j) >= 'a') {
-                    arr[i][j] = str.charAt(j);
-                } else if (str.charAt(j) >= 'A') {
-                    arr[i][j] = str.charAt(j);
-                } else {
-                    arr[i][j] = str.charAt(j);
-                }
+                arr[i][j] = str.charAt(j);
             }
         }
         for (int i = 0; i < 15; i++) {
