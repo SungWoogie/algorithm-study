@@ -1,26 +1,37 @@
 package baekjoon;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Q10798 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        char[][] charArr = new char[5][15];
-
+        int[][] arr = new int[5][15];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 15; j++) {
+                Arrays.fill(arr[i], 10);
+            }
+        }
         for (int i = 0; i < 5; i++) {
             String str = scanner.next();
 
             for (int j = 0; j < str.length(); j++) {
-                charArr[i][j] = str.charAt(j);
+                if (str.charAt(j) >= 'a') {
+                    arr[i][j] = str.charAt(j);
+                } else if (str.charAt(j) >= 'A') {
+                    arr[i][j] = str.charAt(j);
+                } else {
+                    arr[i][j] = str.charAt(j);
+                }
             }
         }
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 5; j++) {
-                if (charArr[j][i] == ' ' || charArr[j][i] == '\0') {
+                if (arr[j][i] == 10) {
                     continue;
                 }
-                System.out.print(charArr[j][i]);
+                System.out.print(((char) arr[j][i]));
             }
         }
     }
