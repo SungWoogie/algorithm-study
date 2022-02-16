@@ -2,7 +2,7 @@ package baekjoon;
 
 import java.util.Scanner;
 
-public class Q2460 {
+public class Q2460 { // 지능형 기차2
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
