@@ -2,7 +2,7 @@ package baekjoon;
 
 import java.util.Scanner;
 
-public class Q2525_220217 {
+public class Q2525_220217 { // 오븐시계
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
