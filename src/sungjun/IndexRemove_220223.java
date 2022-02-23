@@ -3,7 +3,7 @@ package sungjun;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Remove_220223 {
+public class IndexRemove_220223 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = new int[]{50, 10, 20, 30, 40};
