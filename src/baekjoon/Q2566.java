@@ -1,7 +1,7 @@
 package baekjoon;
 
 import java.util.Scanner;
-
+// 2차원 배열 최대값
 public class Q2566 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
