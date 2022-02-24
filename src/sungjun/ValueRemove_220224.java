@@ -7,10 +7,11 @@ public class ValueRemove_220224 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = new int[]{10, 20, 30, 40, 50};
-        int value = scanner.nextInt();
-
-        System.out.println(Arrays.toString(solution(arr, value)));
-
+        while (true) {
+            int value = scanner.nextInt();
+            arr = solution(arr, value);
+            System.out.println(Arrays.toString(arr));
+        }
     }
 
     public static int[] solution(int[] arr, int value) {
