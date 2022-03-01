@@ -1,6 +1,6 @@
 package study;
 
-public class Enum {
+public class Enum1_220301 {
     enum kind {EAST, WEST, SOUTH, NORTH}
 
     public static void main(String[] args) {
