@@ -11,7 +11,7 @@ public class Q10820 {
             int lower = 0; // 소문자
             int upper = 0; // 대문자
             int number = 0; // 숫자
-            int blank = 0; // 공백
+            int space = 0; // 공백
 
             for (int i = 0; i < str.length(); i++) {
                 char[] chArr = str.toCharArray();
@@ -23,10 +23,10 @@ public class Q10820 {
                 } else if (chArr[i] >= 48 && chArr[i] <= 57) {
                     number++;
                 } else {
-                    blank++;
+                    space++;
                 }
             }
-            System.out.println(lower + " " + upper + " " + number + " " + blank);
+            System.out.println(lower + " " + upper + " " + number + " " + space);
         }
     }
 }
