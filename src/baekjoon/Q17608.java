@@ -14,16 +14,16 @@ public class Q17608 {
         for (int i = 0; i < t; i++) {
             list.add(scanner.nextInt());
         }
-        int count = 1;
-        if (t == 0) {
-            count = 0;
-        } else {
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(list.size() - 1) < list.get(i)) {
-                    count++;
-                }
+        int count = 0;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (max < list.get(i)) {
+                max = list.get(i);
+                count++;
             }
         }
+
         System.out.println(count);
     }
 }
