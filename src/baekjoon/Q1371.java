@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Q1371 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StringBuilder sb = new StringBuilder();
 
         int[] arr = new int[26];
 
@@ -19,9 +18,9 @@ public class Q1371 {
             }
         }
         int max = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (max < arr[i]) {
-                max = arr[i];
+        for (int j : arr) {
+            if (max < j) {
+                max = j;
             }
         }
         for (int i = 0; i < arr.length; i++) {
