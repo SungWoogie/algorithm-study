@@ -1,32 +1,34 @@
 package baekjoon;
 
+
+import java.io.*;
 import java.util.Scanner;
 
 public class Q1371 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int[] arr = new int[26];
+        String str;
+        int max = 0;
 
-        while (scanner.hasNextLine()) {
-            String str = scanner.nextLine();
-
+        while ((str = br.readLine()) != null) {
             for (int i = 0; i < str.length(); i++) {
                 if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
                     arr[str.charAt(i) - 'a']++;
                 }
             }
         }
-        int max = 0;
-        for (int j : arr) {
-            if (max < j) {
-                max = j;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
         }
         for (int i = 0; i < arr.length; i++) {
-            if (max == arr[i]) {
-                System.out.print((char) i + 97);
+            if (arr[i] == max) {
+                bw.write('a' + i);
             }
         }
+        bw.flush();
+        bw.close();
     }
 }
