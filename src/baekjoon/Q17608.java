@@ -23,7 +23,6 @@ public class Q17608 {
                 count++;
             }
         }
-
         System.out.println(count);
     }
 }
