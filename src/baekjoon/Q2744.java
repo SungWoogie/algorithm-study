@@ -21,7 +21,7 @@ public class Q2744 {
                     sb.append(value.toLowerCase());
                 }
                 if (str.charAt(i) == lowerCase[j]) {
-                    value = String.valueOf(str.charAt(i)); // 소문자에서 대문자
+                    value = String.valueOf(str.charAt(i)); // 소문자
                     sb.append(value.toUpperCase());
                 }
             }
