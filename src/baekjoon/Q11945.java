@@ -8,13 +8,13 @@ public class Q11945 {
 
         String[] n = scanner.nextLine().split(" ");
 
-        int num = Integer.parseInt(n[0]);
-        int num2 = Integer.parseInt(n[1]);
+        int testCase = Integer.parseInt(n[0]);
+        int testCase2 = Integer.parseInt(n[1]);
 
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i < testCase; i++) {
             String str = scanner.nextLine();
             StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < num2; j++) {
+            for (int j = 0; j < testCase2; j++) {
                 sb.append(str.charAt(j));
             }
             String reverseStr = sb.reverse().toString();
