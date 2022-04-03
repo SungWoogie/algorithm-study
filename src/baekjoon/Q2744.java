@@ -13,7 +13,7 @@ public class Q2744 {
         StringBuilder sb = new StringBuilder();
         String str = scanner.next();
 
-        String value = "";
+        String value;
         for (int i = 0; i < str.length(); i++) {
             for (int j = 0; j < upperCase.length; j++) {
                 if (str.charAt(i) == upperCase[j]) {
