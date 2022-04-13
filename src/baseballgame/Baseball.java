@@ -11,8 +11,8 @@ public class Baseball {
         while (replay) {
             boolean Continue = true; // 게임이 끝나고 재시작할 때 숫자 재생성을 위한 불리언 생성
             Set<Integer> TempComputerNumber = new LinkedHashSet<>(); // 중복값 없애기 위한 Set 사용
-            while (TempComputerNumber.size() != 3) { // 컴퓨터 숫자 생성
-                for (int i = 0; i < 3; i++) {
+            while (TempComputerNumber.size() != 4) { // 컴퓨터 숫자 생성
+                for (int i = 0; i < 4; i++) {
                     TempComputerNumber.add((int) (Math.random() * 9) + 1);
                 }
             }
@@ -27,17 +27,22 @@ public class Baseball {
 
                 int strike = 0;
                 int ball = 0;
+                int homeRum = 0;
 
                 List<Integer> userNumber = new ArrayList<>();
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 4; i++) {
                     userNumber.add(scanner.nextInt());
                     if (computerNumber.contains(userNumber.get(i))) { // 컴퓨터 숫자에 유저 숫자가 있는지 확인
                         if (computerNumber.get(i).equals(userNumber.get(i))) {
+                            homeRum++;
                             strike++;
                         } else {
                             ball++;
                         }
                     }
+                }
+                if (homeRum == 4) {
+                    System.out.println("홈런!!!");
                 }
                 if (strike == 0 && ball == 0) {
                     System.out.println("낫싱");
@@ -49,6 +54,10 @@ public class Baseball {
                 }
                 if (strike > 0 && ball > 0) {
                     System.out.println(strike + " " + "스트라이크" + " " + ball + " " + "볼");
+                }
+                if (homeRum > 3) {
+                    replay = false;
+                    Continue = false;
                 }
                 if (strike == 3) {
                     System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
