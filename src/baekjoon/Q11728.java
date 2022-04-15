@@ -1,7 +1,6 @@
 package baekjoon;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,20 +8,44 @@ public class Q11728 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] arr = new int[scanner.nextInt()];
-        int[] arr1 = new int[scanner.nextInt()];
-        List<Integer> list = new ArrayList<>();
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        List<Integer> listA = new ArrayList<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            list.add(scanner.nextInt());
+        for (int i = 0; i < n; i++) {
+            listA.add(scanner.nextInt());
         }
-        for (int i = 0; i < arr1.length; i++) {
-            list.add(scanner.nextInt());
+        List<Integer> listB = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            listB.add(scanner.nextInt());
         }
-        Collections.sort(list);
+        List<Integer> result = new ArrayList<>();
 
-        for (int a : list) {
-            System.out.print(a + " ");
+        int i = 0;
+        int j = 0;
+        while (i < n && j < m) {
+            int a = listA.get(i);
+            int b = listB.get(j);
+
+            if (a <= b) {
+                result.add(a);
+                i++;
+            } else {
+                result.add(b);
+                j++;
+            }
         }
+        for (; i < n; i++) {
+            result.add(listA.get(i));
+        }
+        for (; j < m; j++) {
+            result.add(listB.get(j));
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int d : result) {
+            sb.append(d).append(" ");
+        }
+        System.out.println(sb);
+
     }
 }
