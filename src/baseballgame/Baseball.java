@@ -12,9 +12,7 @@ public class Baseball {
             boolean Continue = true; // 게임이 끝나고 재시작할 때 숫자 재생성을 위한 불리언 생성
             Set<Integer> TempComputerNumber = new LinkedHashSet<>(); // 중복값 없애기 위한 Set 사용
             while (TempComputerNumber.size() != 4) { // 컴퓨터 숫자 생성
-                for (int i = 0; i < 4; i++) {
-                    TempComputerNumber.add((int) (Math.random() * 9) + 1);
-                }
+                TempComputerNumber.add((int) (Math.random() * 9) + 1);
             }
             List<Integer> computerNumber = new ArrayList<>(TempComputerNumber); // set 값 가져오기 위해 List 로 변환
 
