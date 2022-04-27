@@ -1,4 +1,4 @@
-package baseballgame;
+package projectpractice;
 
 import java.util.*;
 
