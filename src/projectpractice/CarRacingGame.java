@@ -52,17 +52,10 @@ public class CarRacingGame {
             max = Math.max(j, max);
         }
 
-        int index;
-        List<Integer> maxIndexList = new ArrayList<>();   // 인덱스 저장 리스트
-        for (int i = 0; i < positionArr.length; i++) {   // 최대값이랑 같은 값 출력
-            if (max == positionArr[i]) {
-                index = i;
-                maxIndexList.add(index);
-            }
-        }
+        // 수정 코드
         StringBuilder sb = new StringBuilder(); // 결과값 출력할 때 이름 붙이기 위한 빌더 생성
-        for (int i = 0; i < car.length; i++) { // 승자 중복 전부 출력
-            if (maxIndexList.contains(i)) {
+        for (int i = 0; i < positionArr.length; i++) {
+            if (max == positionArr[i]) {
                 sb.append(car[i]).append(" ");
             }
         }
