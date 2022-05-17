@@ -29,11 +29,6 @@ public class CarRacingGame {
             System.out.println();
         }
 
-//        // 숫자 보기 위한 임시 출력
-//        for (int a : positionArr) {
-//            System.out.println(a);
-//        }
-
         // 이름 포지션 결과 출력
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < car.length; j++) {
