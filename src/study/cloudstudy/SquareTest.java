@@ -1,4 +1,4 @@
-package study.cloudstudy.square;
+package study.cloudstudy;
 
 public class SquareTest {
     public static void main(String[] args) {
