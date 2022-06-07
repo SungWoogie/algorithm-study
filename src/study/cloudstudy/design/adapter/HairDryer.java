@@ -1,4 +1,4 @@
-package study.design.adapter;
+package study.cloudstudy.design.adapter;
 
 public class HairDryer implements Electronic110V  {
 

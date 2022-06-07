@@ -1,4 +1,4 @@
-package study.design.adapter;
+package study.cloudstudy.design.adapter;
 
 public interface Electronic110V {
 

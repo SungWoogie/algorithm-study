@@ -1,27 +1,25 @@
 package study;
 
-public enum Note {
-    LION("King"),
-    TIGER("Red"),
-    DOG("Jindo");
+public class Note {
+    int result;
 
-
-    private final String name;
-
-    Note(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-}
-
-class noteTest {
     public static void main(String[] args) {
-        System.out.println(Note.valueOf("DOG"));
-        System.out.println(Note.valueOf("LION"));
-        System.out.println(Note.valueOf("TIGER"));
+        Note a = new Note(10);
+        Note b = new Note(20);
+        System.out.println(a.result + " " + b.result);
+        swap(a, b);
+        System.out.println(a.result + " " + b.result);
+    }
+
+    public Note(int result) {
+        this.result = result;
+    }
+
+    public static void swap(Note a, Note b) {
+        int temp = a.result;
+        a.result = b.result;
+        b.result = temp;
     }
 }
+
+

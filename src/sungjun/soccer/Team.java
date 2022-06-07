@@ -1,28 +1,24 @@
 package sungjun.soccer;
 
+import java.util.Random;
+
 public enum Team {
-    TOTTENHAM(3, 1000),
-    ARSENAL(4, 1000),
-    MANCHESTER_CITY(2, 1000),
-    MANCHESTER_UNITED(4, 1000),
-    LIVERPOOL(2, 1000),
-    CHELSEA(3, 1000),
-    LEICESTER_CITY(6, 1000);
+    TOTTENHAM(3),
+    ARSENAL(4),
+    MANCHESTER_CITY(2),
+    MANCHESTER_UNITED(4),
+    LIVERPOOL(2),
+    CHELSEA(3),
+    LEICESTER_CITY(6);
 
     private final int dividend;
-    private final int money;
 
-    Team(int dividend, int money) {
+    Team(int dividend) {
         this.dividend = dividend;
-        this.money = money;
     }
 
     public int getDividend() {
         return dividend;
-    }
-
-    public int getMoney() {
-        return money;
     }
 
 }

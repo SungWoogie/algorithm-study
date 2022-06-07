@@ -1,4 +1,4 @@
-//package study.design;
+//package study.cloudstudy.design;
 //
 //public class Singleton {
 //

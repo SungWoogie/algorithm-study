@@ -1,6 +1,6 @@
-package study.design;
+package study.cloudstudy.design;
 
-import study.design.dcorator.*;
+import study.cloudstudy.design.dcorator.*;
 
 public class Main {
     public static void main(String[] args) {

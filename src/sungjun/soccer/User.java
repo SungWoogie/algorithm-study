@@ -2,19 +2,27 @@ package sungjun.soccer;
 
 public class User {
 
-    private final int count;
-    private final int amount;
+    private final String teamName;
+    private int amount;
 
-    public User(int count, int amount) {
-        this.count = count;
+    public User(String teamName,int amount) {
+        this.teamName = teamName;
         this.amount = amount;
     }
 
-    public int getCount() {
-        return count;
+    public void win(int price) {
+        this.amount *= price;
+    }
+
+    public void lose() {
+        this.amount = 0;
     }
 
     public int getAmount() {
         return amount;
+    }
+
+    public String getTeamName() {
+        return teamName;
     }
 }
