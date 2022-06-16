@@ -18,4 +18,5 @@ public class Q23795 {
         }
         System.out.println(sum);
     }
+
 }
