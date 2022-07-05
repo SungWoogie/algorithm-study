@@ -1,6 +1,6 @@
 package programmers;
 
-public class Lv1_220705 {
+public class Lv1_220705 { // 내적
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4};
         int[] b = {-3, -1, 0, 2};
