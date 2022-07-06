@@ -15,7 +15,6 @@ public class Lv1_220705_1 {
             for (int j = i + 1; j < nums.length; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
                     int sum = nums[i] + nums[j] + nums[k];
-                    System.out.println(sum);
                     if (isMinority(sum)) {
                         answer++;
                     }
@@ -28,10 +27,8 @@ public class Lv1_220705_1 {
     }
 
     public boolean isMinority(int num) {
-        System.out.println("제곱근 : " + Math.sqrt(num));
         for (int i = 2; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
-                System.out.println("여기가 몇인가 ? : " + num % i);
                 return false;
             }
         }
