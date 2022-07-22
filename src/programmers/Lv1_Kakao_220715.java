@@ -27,7 +27,7 @@ public class Lv1_Kakao_220715 { // 카카오 실패율
                 stage[i] = 0;
             } else {
                 stage[i] = stage[i] / num;
-                num = num - tmp;
+                num = num -tmp;
             }
             fail.add(stage[i]);
         }
