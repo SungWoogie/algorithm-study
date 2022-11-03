@@ -7,16 +7,20 @@ import java.util.Scanner;
 
 public class Split {
     public static void main(String[] args) {
-        List<String[]> numbers = new ArrayList<>();
+        List<String> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        numbers.add(scanner.nextLine().split(""));
+        String num = scanner.nextLine();
 
-        for (String[] a : numbers) {
-            System.out.println(Arrays.toString(a) + " ");
+//        for (int i = 0; i < num.length(); i++) {
+        numbers.add(Arrays.toString(num.split("")));
+//        }
+
+        for (String a : numbers) {
+            System.out.print(a + " ");
         }
-    }
 
+    }
 }
 
 class Split1 {
