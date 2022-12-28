@@ -45,9 +45,16 @@ public class carTest {
         System.out.println();
 
         int max = 0;
-        for (int j : positions) {
-            max = Math.max(j, max);
+        for (int position : positions) {
+            max = Math.max(position, max);
         }
+
+        // 번외 : 최소값 찾아서 진 사람 찾기
+        int min = max;
+        for (int position : positions) {
+            min = Math.min(position, min);
+        }
+
         StringBuilder winnerNames = new StringBuilder();
         for (int i = 0; i < positions.size(); i++) {
             if (max == positions.get(i)) {
@@ -56,5 +63,14 @@ public class carTest {
         }
         winnerNames.delete(winnerNames.length() - 2, winnerNames.length());
         System.out.println(winnerNames.append("가 최종 우승했습니다."));
+
+        StringBuilder loserNames = new StringBuilder();
+        for (int i = 0; i < positions.size(); i++) {
+            if (min == positions.get(i)) {
+                loserNames.append(carNames.get(i)).append(", ");
+            }
+        }
+        loserNames.delete(loserNames.length() - 2, loserNames.length());
+        System.out.println(loserNames.append("가 레이싱에서 패배했습니다."));
     }
 }
