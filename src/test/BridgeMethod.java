@@ -9,6 +9,14 @@ public class BridgeMethod {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
 
+    private static final Map<String, Integer> map = new HashMap<>();
+
+    static {
+        map.put("aboveCount", 0);
+        map.put("failCount", 0);
+        map.put("underCount", 0);
+    }
+
     public static void main(String[] args) {
         printGameStartMessage();
         int bridgeLength = inputBridgeLength();
@@ -27,24 +35,14 @@ public class BridgeMethod {
             List<String> aboveList = new ArrayList<>();
             List<String> underList = new ArrayList<>();
 
-            Map<String, Integer> map = new HashMap<>();
-            map.put("aboveCount", 0);
-            map.put("underCount", 0);
-            map.put("failCount", 0);
-
             for (int i = 0; i < bridgeLength; i++) {
                 String move = moveZoneSelect();
                 Map<String, Integer> countRepository = repeatSelectBridge(move, i, randomNumbers, aboveList, underList, failCount, aboveOCount, underOCount);
-
-
-
                 aboveOCount = countRepository.get("aboveCount");
                 underOCount = countRepository.get("underCount");
                 failCount = countRepository.get("failCount");
                 addBracket(aboveBridge, underBridge, i, aboveList, underList);
                 printResult(aboveBridge, underBridge);
-
-
                 if (compareFailCount(countRepository)) {
                     break;
                 }
@@ -76,7 +74,7 @@ public class BridgeMethod {
     public static Map<String, Integer> repeatSelectBridge(String move, int i, List<Integer> randomNumbers,
                                                           List<String> aboveList, List<String> underList, int failCount,
                                                           int aboveOCount, int underOCount) {
-        Map<String, Integer> aboveCountUnderCountFailCountRepository = new HashMap<>();
+        Map<String, Integer> aboveCountUnderCountFailCountRepository = map;
         if (isSelectAboveBridge(move)) {
             if (isRandomNumberEqualsToOne(randomNumbers, i)) {
                 addAboveListToO(aboveList);
