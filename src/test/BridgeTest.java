@@ -18,27 +18,30 @@ public class BridgeTest {
 
         String success = "성공";
         String fail = "실패";
+
         boolean isReplay = true;
-        int successCount = 0;
+        int totalAttemptCount = 0;
 
         List<Integer> randomNumbers = new ArrayList<>();
         for (int i = 0; i < bridgeLength; i++) {
             randomNumbers.add(RANDOM.nextInt(2)); // 0 이면 아래, 1이면 위에
         }
+
+
         while (isReplay) {
             int upperOCount = 0;
             int lowerOCount = 0;
-            successCount++;
+            totalAttemptCount++;
             isReplay = false;
             StringBuilder upperBridge = new StringBuilder("[");
             StringBuilder lowerBridge = new StringBuilder("[");
+
             List<String> upperList = new ArrayList<>();
             List<String> lowerList = new ArrayList<>();
             int failCount = 0;
             for (int i = 0; i < bridgeLength; i++) {
                 System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
                 String move = SCANNER.next(); // 이동하고 싶은 위치 선택
-
                 if (move.equals("U")) {
                     if (randomNumbers.get(i) == 1) {
                         upperList.add(" O ");
@@ -88,7 +91,7 @@ public class BridgeTest {
                 System.out.println(lowerBridge);
                 System.out.println();
                 System.out.println("게임 성공 여부: " + success);
-                System.out.println("총 시도한 횟수: " + successCount);
+                System.out.println("총 시도한 횟수: " + totalAttemptCount);
             } else {
                 System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
                 if (SCANNER.next().equals("R")) {
@@ -100,7 +103,7 @@ public class BridgeTest {
                     System.out.println(lowerBridge);
                     System.out.println();
                     System.out.println("게임 성공 여부: " + fail);
-                    System.out.println("총 시도한 횟수: " + successCount);
+                    System.out.println("총 시도한 횟수: " + totalAttemptCount);
                 }
             }
         }
