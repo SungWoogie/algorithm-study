@@ -41,6 +41,8 @@ public class BridgeMethod {
                 aboveOCount = countRepository.get("aboveCount");
                 underOCount = countRepository.get("underCount");
                 failCount = countRepository.get("failCount");
+
+
                 addBracket(aboveBridge, underBridge, i, aboveList, underList);
                 printResult(aboveBridge, underBridge);
                 if (compareFailCount(countRepository)) {
