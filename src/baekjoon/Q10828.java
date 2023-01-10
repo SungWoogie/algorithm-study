@@ -5,30 +5,47 @@ import java.util.Stack;
 
 public class Q10828 {
     public static void main(String[] args) {
-        int h = 5;
-        draw1(h);
-        draw2(h);
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
 
-    }
+        int n = scanner.nextInt();
 
-    public static void draw1(int h) {
-        if (h == 0) {
-            return;
-        }
-        draw1(h - 1);
-        for (int i = 0; i < h; i++) {
-            System.out.printf("*");
-        }
-        System.out.println();
-    }
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            String str = scanner.next();
+            switch (str) {
+                case "push":
+                    stack.push(scanner.next());
+                    break;
+                case "top":
+                    if (stack.isEmpty()) {
+                        sb.append(-1).append("\n");
+                    } else {
+                        sb.append(stack.peek()).append("\n");
 
-    public static void draw2(int h) {
-        for (int o = 0; o < h; o++) {
-            for (int i = 0; i < o; i++) {
-                System.out.printf("*");
+                    }
+                    break;
+                case "size":
+                    sb.append(stack.size()).append("\n");
+                    break;
+                case "empty":
+                    if (stack.isEmpty()) {
+                        sb.append(1).append("\n");
+                    } else {
+                        sb.append(0).append("\n");
+                    }
+                    break;
+                case "pop":
+                    if (stack.isEmpty()) {
+                        sb.append(-1).append("\n");
+                    } else {
+                        sb.append(stack.pop()).append("\n");
+                    }
+
+                    break;
             }
-            System.out.println();
         }
+        System.out.println(sb);
     }
-
 }
+
