@@ -10,7 +10,7 @@ public class Futsal {
         System.out.println("풋살에 참가할 참가자 이름을 입력해주세요.");
         List<String> players = List.of(scanner.nextLine().split(" "));
 
-        List<String> ATeam = new ArrayList<>(players);
+        Set<String> ATeam = new HashSet<>(players);
         Set<String> tempBTeam = new LinkedHashSet<>();
 
         System.out.println();
@@ -18,14 +18,22 @@ public class Futsal {
         System.out.println(players);
         System.out.println();
 
-        while (tempBTeam.size() != 6) { // 랜덤으로 인덱스 뽑아서 선수 넣기
-            for (int i = 0; i < ATeam.size(); i++) {
-                int randomIndex = random.nextInt(12);
-                if (i == randomIndex) {
-                    tempBTeam.add(ATeam.remove(i));
+        // 랜덤으로 인덱스 뽑아서 선수 넣기
+        boolean BTeamPersonnel = true;
+        while (BTeamPersonnel) {
+            for (int i = 0; i < players.size(); i++) {
+                if (tempBTeam.size() == 6){
+                    BTeamPersonnel = false;
+                    break;
                 }
+                tempBTeam.add(players.get(randomIndex));
             }
         }
+        // 같은 선수 A 팀에서 제거 하기 로직 추가
+        for (String BTeam : tempBTeam) {
+            ATeam.remove(BTeam);
+        }
+
         List<String> BTeam = new ArrayList<>(tempBTeam);
         System.out.println("A팀 : " + ATeam);
         System.out.println("B팀 : " + BTeam);
