@@ -10,8 +10,8 @@ public class Futsal {
         System.out.println("풋살에 참가할 참가자 이름을 입력해주세요.");
         List<String> players = List.of(scanner.nextLine().split(" "));
 
-        Set<String> ATeam = new HashSet<>(players);
-        Set<String> tempBTeam = new LinkedHashSet<>();
+        Set<String> tempATeams = new HashSet<>(players);
+        Set<String> tempBTeams = new LinkedHashSet<>();
 
         System.out.println();
         System.out.println("--------------- 참가하기로 한 명단 ---------------");
@@ -21,31 +21,33 @@ public class Futsal {
         // 랜덤으로 인덱스 뽑아서 선수 넣기
         boolean BTeamPersonnel = true;
         while (BTeamPersonnel) {
-            for (int i = 0; i < players.size(); i++) {
-                if (tempBTeam.size() == 6){
+            for (String ATeam : tempATeams) {
+                if (tempBTeams.size() == 6) {
                     BTeamPersonnel = false;
                     break;
                 }
-                tempBTeam.add(players.get(randomIndex));
+                tempBTeams.add(ATeam);
             }
         }
-        // 같은 선수 A 팀에서 제거 하기 로직 추가
-        for (String BTeam : tempBTeam) {
-            ATeam.remove(BTeam);
-        }
 
-        List<String> BTeam = new ArrayList<>(tempBTeam);
-        System.out.println("A팀 : " + ATeam);
-        System.out.println("B팀 : " + BTeam);
+        // 같은 선수 A 팀에서 제거 하기 로직 추가
+        for (String BTeam : tempBTeams) {
+            tempATeams.remove(BTeam);
+        }
+        List<String> ATeams = new ArrayList<>(tempATeams);
+        List<String> BTeams = new ArrayList<>(tempBTeams);
+
+        System.out.println("A팀 : " + ATeams);
+        System.out.println("B팀 : " + BTeams);
         System.out.println();
 
         // 공격수 뽑기
         Map<String, Boolean> aTeams = new HashMap<>();
         Map<String, Boolean> bTeams = new HashMap<>();
 
-        for (int i = 0; i < ATeam.size(); i++) {
-            aTeams.put(ATeam.get(i), false);
-            bTeams.put(BTeam.get(i), false);
+        for (int i = 0; i < ATeams.size(); i++) {
+            aTeams.put(ATeams.get(i), false);
+            bTeams.put(BTeams.get(i), false);
         }
 
         int aTeamForwardCount = 0;
