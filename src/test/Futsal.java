@@ -15,8 +15,7 @@ public class Futsal {
 
         System.out.println();
         System.out.println("--------------- 참가하기로 한 명단 ---------------");
-        System.out.println(players);
-        System.out.println();
+        System.out.println(players + "\n");
 
         // 랜덤으로 인덱스 뽑아서 선수 넣기
         boolean BTeamPersonnel = true;
