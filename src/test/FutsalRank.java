@@ -52,6 +52,7 @@ public class FutsalRank {
         Map<String, List<String>> BTeams = new HashMap<>();
         while (teamSelection) {
             Map<String, List<String>> tempAllPlayersStorage = new HashMap<>(allPlayersStorage);
+            System.out.println("값 이있냐? : " + tempAllPlayersStorage);
             int ATeamRankScore = 0;
             int BTeamRankScore = 0;
             for (Map.Entry<String, List<String>> allPlayer : allPlayersStorage.entrySet()) {
@@ -111,7 +112,7 @@ public class FutsalRank {
                 ATeam.getValue().set(1, "공격수");
             }
         }
-        // Map 안에 List 에 저장되어 있는 Profile (0번째는 랭크, 1번째는 공격수 여부, 2번째 주사위, 3번째 랭크 우선 순위)
+        // TODO - Map 안에 List 에 저장되어 있는 Profile (0번째는 알파벳 랭크, 1번째는 공격수 여부, 2번째 주사위, 3번째 랭크 우선 순위)
 
         // 랭크 점수 인티저로 바꿔서 저장하고 정렬하기
         List<Integer> ATeamRankScore = new ArrayList<>(); // 랭크 점수 3, 2, 1
@@ -133,30 +134,30 @@ public class FutsalRank {
                 tempATeamForwards.put(ATeam.getKey(), ATeam.getValue());
             }
         }
-        // 공격수만 뽑아놓고 조건에 해당하는 이름 리스트로 저장
-        int ATeamCount = 0;
-        String ATeamFirstStriker = "";
-        String ATeamSecondStriker = "";
-        Set<String> ATeamForwardNames = new LinkedHashSet<>();
-        for (Map.Entry<String, List<String>> forward : tempATeamForwards.entrySet()) {
-            for (int i = 0; i < ATeamRanking.size(); i++) {
-                if (forward.getValue().get(3).contains(String.valueOf(ATeamRankScore.get(i)))) {
-                    if (forward.getValue().get(0).contains(ATeamRanking.get(i))) {
-                        ATeamForwardNames.add(forward.getKey());
-                        ATeamCount++;
-                    }
-                }
-                if (ATeamCount == 2) {
-                    break;
-                }
-            }
-        }
+        int ATeamForwardNames = tempATeamForwards.size(); // 공격수가 두명 초과했냐 ?
+
+        // 여기서 공격수가 3명 보다 크면 찾아야 된다.
+        // TODO - 여기가 잘못됬음
+        // TODO - 아까 코드 해놨다가 어디가 잘못된건지 찾아서 지우고 다시하는 중이였음
+//        int max = 0;
+//        String ATeamFirstName;
+//        if (ATeamForwardNames >= 3) {
+//            for (Map.Entry<String, List<String>> ATeam : tempATeamForwards.entrySet()) {
+//                if (Integer.parseInt(ATeam.getValue().get(3)) > max) { // 랭크 점수 제일 높은애 찾아
+//                    max = Integer.parseInt(ATeam.getValue().get(3));
+//                }
+//            }
+//
+//        }
+
+
         for (Map.Entry<String, List<String>> ATeam : ATeams.entrySet()) {
             if (!ATeamForwardNames.contains(ATeam.getKey())) {
                 ATeam.getValue().set(1, "일반선수");
+                ATeams.put(ATeam.getKey(), ATeam.getValue());
             }
         }
-        System.out.println("A 팀 공격수 적용 후 : " + ATeams +"\n");
+        System.out.println("A 팀 공격수 적용 후 : " + ATeams + "\n");
 
         // TODO - 여기서 부터는 B 팀 관련 찾기 로직 위랑 동일
 
