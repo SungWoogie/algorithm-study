@@ -116,13 +116,16 @@ public class FutsalRank {
 
         // TODO - Map 안에 List 에 저장되어 있는 Profile (0번째는 알파벳 랭크, 1번째는 공격수 여부, 2번째 주사위, 3번째 랭크 우선 순위)
         String ATeamFirstDiceNumber = String.valueOf(ATeamDices.get(ATeamDices.size() - 1)); // 제일 높은 첫번째 주사위 값
-        String ATeamSecondDiceNumber = String.valueOf(ATeamDices.get(ATeamDices.size() - 2)); // 다음으로 높은 주사위 값
+        String ATeamSecondDiceNumber = String.valueOf(ATeamDices.get(ATeamDices.size() - 2)); // 두번째로 높은 주사위 값
+        String ATeamThirdDiceNumber = String.valueOf(ATeamDices.get(ATeamDices.size() - 3)); // 세번째로 높은 주사위 값
+
         String ATeamFirstRankScore = String.valueOf(ATeamRankScore.get(ATeamRankScore.size() - 1)); // 제일 높은 랭크 값
         String ATeamSecondRankScore = String.valueOf(ATeamRankScore.get(ATeamRankScore.size() - 2)); // 제일 높은 랭크 값
         String ATeamThirdRankScore = String.valueOf(ATeamRankScore.get(ATeamRankScore.size() - 3)); // 제일 높은 랭크 값
 
         int ATeamFirstDiceEqualCount = 0;
         int ATeamSecondDiceEqualCount = 0;
+        int ATeamThirdDiceEqualCount = 0;
         int ATeamFirstRankEqualCount = 0;
         for (Map.Entry<String, List<String>> ATeam : ATeams.entrySet()) {
             if (ATeam.getValue().get(2).contains(ATeamFirstDiceNumber)) { // 제일 높은 주사위 숫자 같은게 있냐
@@ -131,13 +134,18 @@ public class FutsalRank {
             if (ATeam.getValue().get(2).contains(ATeamSecondDiceNumber)) { // 두번째 높은 주사위랑 같은거 있냐
                 ATeamSecondDiceEqualCount++;
             }
+            if (ATeam.getValue().get(2).contains(ATeamThirdDiceNumber)) { // 세번째 주사위
+                ATeamThirdDiceEqualCount++;
+            }
             if (ATeam.getValue().get(3).contains(ATeamFirstRankScore)) { // 제일 높은 랭크와 같은게 있냐
                 ATeamFirstRankEqualCount++;
             }
+
         }
 
         int ATeamFirstCount = 0;
         int ATeamSecondCount = 0;
+        int ATeamRankEqualCount = 0;
         if (ATeamFirstDiceEqualCount == 2) { // 첫번째 주사위 같은 숫자가 2명이냐
             for (Map.Entry<String, List<String>> ATeam : ATeams.entrySet()) {
                 if (ATeam.getValue().get(2).equals(ATeamFirstDiceNumber)) { // 첫번째 주사위 숫자랑 같은 놈을 공격수로 바꿔라
@@ -145,11 +153,20 @@ public class FutsalRank {
                 }
             }
         } else if (ATeamFirstDiceEqualCount >= 3) { // 아니면 첫번째 주사위와 같은 값이 3명 이상이냐
+            for (Map.Entry<String, List<String>> ATeam : ATeams.entrySet()) {
+                if (ATeam.getValue().get(2).equals(ATeamFirstDiceNumber)) {
+                    ATeam.getValue().set(1, "공격수");
+                    ATeamFirstCount++;
+                }
+                if (ATeamFirstCount == 2) { // 그러면 사전순으로 2명 공격수로 바꾸고 멈춰라
+                    break;
+                }
+            }
             if (ATeamFirstRankEqualCount >= 3) { // 혹시 랭크 높은 값도 3명 이상이냐
                 for (Map.Entry<String, List<String>> ATeam : ATeams.entrySet()) {
-                    if (ATeam.getValue().get(2).equals(ATeamFirstDiceNumber)) {
+                    if (ATeam.getValue().get(2).equals(ATeamFirstRankScore)) {
                         ATeam.getValue().set(1, "공격수");
-                        ATeamFirstCount++;
+                        ATeamRankEqualCount++;
                     }
                     if (ATeamFirstCount == 2) { // 그러면 사전순으로 2명 공격수로 바꾸고 멈춰라
                         break;
@@ -229,6 +246,8 @@ public class FutsalRank {
 
         int BTeamFirstCount = 0;
         int BTeamSecondCount = 0;
+        int BTeamRankEqualCount = 0;
+
         if (BTeamFirstDiceEqualCount == 2) { // 첫번째 주사위 같은 숫자가 2명이냐
             for (Map.Entry<String, List<String>> BTeam : BTeams.entrySet()) {
                 if (BTeam.getValue().get(2).equals(BTeamFirstDiceNumber)) { // 첫번째 주사위 숫자랑 같은 놈을 공격수로 바꿔라
@@ -236,11 +255,20 @@ public class FutsalRank {
                 }
             }
         } else if (BTeamFirstDiceEqualCount >= 3) { // 아니면 첫번째 주사위와 같은 값이 3명 이상이냐
+            for (Map.Entry<String, List<String>> BTeam : BTeams.entrySet()) {
+                if (BTeam.getValue().get(2).equals(BTeamFirstDiceNumber)) {
+                    BTeam.getValue().set(1, "공격수");
+                    BTeamFirstCount++;
+                }
+                if (BTeamFirstCount == 2) { // 그러면 사전순으로 2명 공격수로 바꾸고 멈춰라
+                    break;
+                }
+            }
             if (BTeamFirstRankEqualCount >= 3) { // 혹시 랭크 높은 값도 3명 이상이냐
                 for (Map.Entry<String, List<String>> BTeam : BTeams.entrySet()) {
-                    if (BTeam.getValue().get(2).equals(BTeamFirstDiceNumber)) {
+                    if (BTeam.getValue().get(2).equals(BTeamFirstRankScore)) {
                         BTeam.getValue().set(1, "공격수");
-                        BTeamFirstCount++;
+                        BTeamRankEqualCount++;
                     }
                     if (BTeamFirstCount == 2) { // 그러면 사전순으로 2명 공격수로 바꾸고 멈춰라
                         break;
