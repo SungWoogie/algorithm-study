@@ -32,7 +32,7 @@ public class FutsalRank {
             }
             allPlayersStorage.put(player, playersProfile);
         }
-
+//        성욱 성준 준성 상국 황두 인기 기강 현진 상준 영수 상훈 성규
         // 랭크 모두 더한 값 구해야함 그래야 몇 차이 날지 확인 가능
         int totalRankScore = 0;
         for (Map.Entry<String, List<String>> rank : allPlayersStorage.entrySet()) {
@@ -51,14 +51,15 @@ public class FutsalRank {
         Map<String, List<String>> ATeams = new LinkedHashMap<>();
         Map<String, List<String>> BTeams = new LinkedHashMap<>();
         while (teamSelection) {
+            Map<String, List<String>> allPlayersStorage123123 = new HashMap<>(allPlayersStorage);
             Map<String, List<String>> tempAllPlayersStorage = new HashMap<>(allPlayersStorage);
             int ATeamRankScore = 0;
             int BTeamRankScore = 0;
             for (Map.Entry<String, List<String>> tempAllPlayer : tempAllPlayersStorage.entrySet()) {
                 if (BTeams.size() < 6) {
                     BTeams.put(tempAllPlayer.getKey(), tempAllPlayer.getValue());
-                    allPlayersStorage.remove(tempAllPlayer.getKey(), tempAllPlayer.getValue());
-                    ATeams = allPlayersStorage;
+                    allPlayersStorage123123.remove(tempAllPlayer.getKey(), tempAllPlayer.getValue());
+                    ATeams = allPlayersStorage123123;
                 }
             }
             // A 팀 랭크 스코어 합산 구하기
@@ -71,6 +72,7 @@ public class FutsalRank {
                     ATeamRankScore += 1;
                 }
             }
+
             // B 팀 랭크 스코어 합산 구하기
             for (Map.Entry<String, List<String>> BTeam : BTeams.entrySet()) {
                 if (BTeam.getValue().get(0).equals("A")) {
