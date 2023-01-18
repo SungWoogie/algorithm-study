@@ -83,6 +83,7 @@ public class FutsalRank {
                     BTeamRankScore += 1;
                 }
             }
+
             if (ATeamRankScore == BTeamRankScore) {
                 teamSelection = false;
             } else if (ATeamRankScore > BTeamRankScore && ATeamRankScore - BTeamRankScore == 1 || ATeamRankScore - BTeamRankScore == 2) {
