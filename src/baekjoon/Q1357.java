@@ -12,9 +12,9 @@ public class Q1357 {
         // 숫자를 먼저 뒤집기
         int xReversed = 0;
         while (x > 0) {
-            int percent = x % 10;
-            xReversed = xReversed * 10 + percent;
-            x /= 10;
+            int percent = x % 10; // 3 2 1
+            xReversed = xReversed * 10 + percent; // 321
+            x /= 10; // 1
         }
 
         int yReversed = 0;
