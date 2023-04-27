@@ -14,6 +14,8 @@ public class P230426_1 {
 
         for (int i = 0; i < s.length(); i++) {
             if (i != 0) {
+                System.out.println("=== subString === " + s.substring(0, i));
+                System.out.println("=== lastIndexOf === " + s.charAt(i));
                 int index = s.substring(0, i).lastIndexOf(s.charAt(i));
                 if (index != -1) {
                     answer[i] = i - index;
