@@ -14,8 +14,13 @@ public class Stream_230429_2 {
         IntStream intStream1 = new Random().ints(5);
         intStream1.forEach(System.out::println);
 
-        IntStream intStream2 = new Random().ints(3,5, 10);
+        IntStream intStream2 = new Random().ints(3, 5, 10);
         intStream2.forEach(System.out::println);
+
+        System.out.println("스트림 람다식 활용하기");
+        int[] arr = new int[]{5, 2, 1, 3, 6};
+        Stream<Integer> stream = Stream.iterate(0, x -> x + 2);
+        stream.forEach(System.out::println);
     }
 
 }
