@@ -12,13 +12,13 @@ public class Test_7 {
         System.out.print("로또 개수를 입력해 주세요.(숫자 1 ~ 10):");
         int buyLotto = scanner.nextInt();
 
-        Map<Character, List<Integer>> map = new LinkedHashMap<>(); // 알파벳과 6자리 숫자를 동시에 저장
+        Map<Character, List<Integer>> map = new LinkedHashMap<>();
         char endChar = (char) ('A' + buyLotto - 1);
         for (char ch = 'A'; ch <= endChar; ch++) {
             List<Integer> list = new ArrayList<>();
             while (list.size() != 6) {
                 int num = random.nextInt(45) + 1;
-                if (!list.contains(num)) { // 같은 숫자가 포함되어 있지 않냐
+                if (!list.contains(num)) {
                     list.add(num);
                 }
             }
