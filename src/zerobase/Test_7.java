@@ -3,6 +3,7 @@ package zerobase;
 import java.util.*;
 
 // 로또 당첨 프로그램
+
 public class Test_7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
