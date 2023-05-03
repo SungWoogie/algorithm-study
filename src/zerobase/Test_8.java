@@ -19,11 +19,11 @@ public class Test_8 {
         int tax = 0;
         for (int i = 1; i < taxList.size(); i++) {
             int taxableIncome = Math.min(income - taxList.get(i - 1), taxList.get(i) - taxList.get(i - 1));
-            if (taxableIncome > 0) {
+            if (taxableIncome > 0) { // 과세 소득이 0보다 큰 경우 현재 세금 슬래브에 대한 세액을 계산한다.
                 int taxAmount = (int) (taxableIncome * taxRates.get(i - 1));
                 System.out.printf("%10d * %2.0f%% = %10d\n", taxableIncome, taxRates.get(i - 1) * 100, taxAmount);
                 tax += taxAmount;
-            } else {
+            } else {  // 과세 소득이 0 이거나 음수이면 루프가 끊어집니다.
                 break;
             }
         }
