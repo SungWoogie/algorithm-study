@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 // 짝수는 싫어요
-public class P230534 {
+public class P230515 {
     public static int[] solution(int n) {
         int[] answer;
 
