@@ -1,5 +1,8 @@
 package zerobase;
 
+import static zerobase.Pager.printNextPageMessage;
+import static zerobase.Pager.printPreviousPageMessage;
+
 public class MiniTask_3_230608 {
 
     public static void main(String[] args) {
@@ -7,7 +10,9 @@ public class MiniTask_3_230608 {
         long pageIndex = 1L;
 
         Pager pager = new Pager(totalCount);
-        pager.html(pageIndex);
+        printPreviousPageMessage();
+        System.out.println(pager.html(pageIndex));
+        printNextPageMessage();
     }
 }
 
@@ -19,28 +24,27 @@ class Pager {
         this.totalCount = Math.round((double) totalCount / 10);
     }
 
-    public void html(long totalCount) {
+    public StringBuilder html(long totalCount) {
         long page = checkPage(totalCount);
 
-        printPreviousPageMessage();
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (long i = page; i <= this.totalCount; i++) {
             if (i % 10 == 0) {
                 if (totalCount == 10) {
-                    System.out.println("<a href='#' class='on'>" + i + "</a>");
+                    stringBuilder.append("<a href='#' class='on'>").append(i).append("</a>").append("\n");
                     break;
                 }
-                System.out.println("<a href='#'>" + i + "</a>");
+                stringBuilder.append("<a href='#'>").append(i).append("</a>").append("\n");
                 break;
             }
             if (totalCount == i) {
-                System.out.println("<a href='#' class='on'>" + i + "</a>");
+                stringBuilder.append("<a href='#' class='on'>").append(i).append("</a>").append("\n");
                 continue;
             }
-            System.out.println("<a href='#'>" + i + "</a>");
-
+            stringBuilder.append("<a href='#'>").append(i).append("</a>").append("\n");
         }
-        printNextPageMessage();
+        return stringBuilder;
     }
 
     private long checkPage(long totalCount) {
@@ -53,13 +57,13 @@ class Pager {
         return page;
     }
 
-    private void printPreviousPageMessage() {
+    public static void printPreviousPageMessage() {
         System.out.println("<a href='#'>[처음]</a>");
         System.out.println("<a href='#'>[이전]</a>" + "\n");
     }
 
-    private void printNextPageMessage() {
-        System.out.println("\n" + "<a href='#'>[다음]</a>");
+    public static void printNextPageMessage() {
+        System.out.println("<a href='#'>[다음]</a>");
         System.out.println("<a href='#'>[마지막]</a>");
     }
 }
