@@ -1,35 +1,22 @@
 package zerobase;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class CodingTest_230608_2 {
     public static int solution(String[] names) {
 
-        Set<String> set = new LinkedHashSet<>();
-        Collections.addAll(set, names);
-
+        Set<String> set = new HashSet<>(Arrays.asList(names));
         int totalParticipant = set.size();
         int winningCount = 4;
 
-        return calculateCombination(totalParticipant, winningCount);
-    }
-
-    public static int calculateCombination(int total, int winning) {
-        int[][] dp = new int[total + 1][winning + 1];
-
-        for (int i = 0; i <= total; i++) {
-            dp[i][0] = 1;
+        long numerator = 1;
+        long denominator = 1;
+        for (int i = 0; i < winningCount; i++) {
+            numerator *= totalParticipant - i;
+            denominator *= (i + 1);
         }
 
-        for (int i = 1; i <= total; i++) {
-            for (int j = 1; j <= winning; j++) {
-                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
-            }
-        }
-
-        return dp[total][winning];
+        return (int) (numerator / denominator);
     }
 
     public static void main(String[] args) {
