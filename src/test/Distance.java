@@ -8,7 +8,7 @@ public class Distance {
         double b = 126.8955438;
 
         double x1 = 37.480824;
-        double x2 = 126.696065;  // 0.0621
+        double x2 = 126.896065;  // 0.0621
 
         double y1 = 37.480507;
         double y2 = 126.894295;  // 0.1344
@@ -19,7 +19,7 @@ public class Distance {
 
 
 //        double distance = distance(a, b, x1, x2);
-        double distance = Double.parseDouble(decimalFormat.format(calculateDistance(a, b, y1, y2)));
+        double distance = calculateDistance(a, b, x1, x2);
         System.out.println(distance);
     }
     private static final double EARTH_RADIUS = 6371.0; // 지구 반지름 (단위: km)
@@ -33,8 +33,7 @@ public class Distance {
                 * Math.sin(dLon / 2) * Math.sin(dLon / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        double distance = EARTH_RADIUS * c;
-        return distance;
+        return EARTH_RADIUS * c;
     }
 
 //    public static double distance(double lat1, double lon1, double lat2, double lon2) {
